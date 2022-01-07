@@ -1,12 +1,11 @@
-import M from 'materialize-css';
 import React from 'react';
 
-class CommandList extends React.Component
+class ShoppingCart extends React.Component
 {
     render()
     {
-        console.log(this.props.shoppingCart);
-        const items = this.props.shoppingCart.map((product) =>
+        console.log(this.props.content);
+        const items = this.props.content.map((product) =>
         {
             console.log("name = " + product.name);
             console.log("price = " + product.price);
@@ -25,4 +24,4 @@ class CommandList extends React.Component
     }
 }
 
-export default CommandList;
+export default ShoppingCart;

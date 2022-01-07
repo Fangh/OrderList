@@ -1,22 +1,21 @@
 import React from 'react';
 import ProductList from './ProductList.js'
-import CommandList from './CommandList.js'
+import ShoppingCart from './ShoppingCart.js'
 
 class Layout extends React.Component
 {
     constructor(props)
     {
         super(props);
-        let shoppingCart = [];
         this.state =
         {
-            shoppingCart: shoppingCart
+            cartContent: []
         }
     }
 
     addProduct(product)
     {
-        const tempShoppingCart = this.state.shoppingCart.slice();
+        const tempShoppingCart = this.state.cartContent.slice();
         tempShoppingCart.push(product);
         console.log("adding product = " + JSON.stringify(product));
         this.setState(
@@ -37,7 +36,7 @@ class Layout extends React.Component
                     </div>
                     <div className="col s6 center">
                         <p className="flow-text"><i className='small material-icons'>shopping_cart</i> Commande</p>
-                        <CommandList shoppingCart={this.state.shoppingCart} />
+                        <ShoppingCart content={this.state.cartContent} />
                     </div>
                 </div>
             </div>
