@@ -6,9 +6,8 @@ class ProductButton extends React.Component
     {
         let currentProduct = this.props.products[this.props.id];
         return (
-            <a href="#!" key={currentProduct.name} className="collection-item left-align" onClick={() => this.props.addProduct(currentProduct)}>
-                {currentProduct.name}
-                <div className="secondary-content" > {currentProduct.price}€</div>
+            <a href="#!" key={currentProduct.name} className="collection-item left-align flow-text" onClick={() => this.props.addProduct(currentProduct)}>
+                {currentProduct.name} ({currentProduct.price}€)
             </a>
         )
     }

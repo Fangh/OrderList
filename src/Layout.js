@@ -15,14 +15,30 @@ class Layout extends React.Component
 
     addProduct(product)
     {
-        const tempShoppingCart = this.state.cartContent.slice();
-        tempShoppingCart.push(product);
+        const tempContent = this.state.cartContent.slice();
+        tempContent.push(product);
         console.log("adding product = " + JSON.stringify(product));
         this.setState(
             {
-                shoppingCart: tempShoppingCart
-            }
-        )
+                cartContent: tempContent
+            });
+    }
+
+    removeProduct(product)
+    {
+        if (product === undefined)
+        {
+            console.log("error");
+            return;
+        }
+
+        console.log("removing product = " + JSON.stringify(product));
+        let tempContent = this.state.cartContent.slice();
+        tempContent = tempContent.filter(item => item.name !== product.name)
+        this.setState(
+            {
+                cartContent: tempContent
+            });
     }
 
     render()
@@ -36,7 +52,7 @@ class Layout extends React.Component
                     </div>
                     <div className="col s6 center">
                         <p className="flow-text"><i className='small material-icons'>shopping_cart</i> Commande</p>
-                        <ShoppingCart content={this.state.cartContent} />
+                        <ShoppingCart content={this.state.cartContent} removeProduct={(ctx) => this.removeProduct(ctx)} />
                     </div>
                 </div>
             </div>
