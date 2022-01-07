@@ -13,28 +13,53 @@ class Layout extends React.Component
         }
     }
 
-    addProduct(product)
+    addProduct(_product)
     {
         const tempContent = this.state.cartContent.slice();
-        tempContent.push(product);
-        console.log("adding product = " + JSON.stringify(product));
+        let wasFound = false;
+        tempContent.forEach(element => 
+        {
+            //item already exist
+            if (element.product.name === _product.name)
+            {
+                element.number++;
+                wasFound = true;
+            }
+        });
+        //item does not exist
+        if (!wasFound)
+        {
+            tempContent.push({ product: _product, number: 1 });
+        }
+
+        console.log("adding product = " + JSON.stringify(_product));
         this.setState(
             {
                 cartContent: tempContent
             });
     }
 
-    removeProduct(product)
+    removeProduct(_product)
     {
-        if (product === undefined)
+        if (_product === undefined)
         {
             console.log("error");
             return;
         }
 
-        console.log("removing product = " + JSON.stringify(product));
+        console.log("removing product = " + JSON.stringify(_product));
         let tempContent = this.state.cartContent.slice();
-        tempContent = tempContent.filter(item => item.name !== product.name)
+        tempContent.forEach(function (element, index, object) 
+        {
+            //item already exist
+            if (element.product.name === _product.name)
+            {
+                element.number--;
+            }
+            if (element.number === 0)
+                object.splice(index, 1);
+        });
+
         this.setState(
             {
                 cartContent: tempContent

@@ -17,12 +17,6 @@ class ProductList extends React.Component
         productList.push(new Product("Limonade", 2));
         productList.push(new Product("Jus citronnée", 1));
         productList.push(new Product("Café", 2));
-        productList.push(new Product("Café", 2));
-        productList.push(new Product("Café", 2));
-        productList.push(new Product("Café", 2));
-        productList.push(new Product("Café", 2));
-        productList.push(new Product("Café", 2));
-        productList.push(new Product("Café", 2));
 
         this.state =
         {
