@@ -43,7 +43,7 @@ class Layout extends React.Component
     {
         if (_product === undefined)
         {
-            console.log("error");
+            console.log("_product is undefined");
             return;
         }
 
@@ -56,13 +56,21 @@ class Layout extends React.Component
             {
                 element.number--;
             }
-            if (element.number === 0)
+            if (element.number == 0)
                 object.splice(index, 1);
         });
 
         this.setState(
             {
                 cartContent: tempContent
+            });
+    }
+
+    removeAllProducts()
+    {
+        this.setState(
+            {
+                cartContent: []
             });
     }
 
@@ -77,7 +85,11 @@ class Layout extends React.Component
                     </div>
                     <div className="col s6 center">
                         <p className="flow-text"><i className='small material-icons'>shopping_cart</i> Commande</p>
-                        <ShoppingCart content={this.state.cartContent} removeProduct={(ctx) => this.removeProduct(ctx)} />
+                        <ShoppingCart
+                            content={this.state.cartContent}
+                            removeProduct={(ctx) => this.removeProduct(ctx)}
+                            removeAllProducts={() => this.removeAllProducts()}
+                        />
                     </div>
                 </div>
             </div>

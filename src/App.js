@@ -7,7 +7,7 @@ function App()
   return (
     <div>
       <NavBar />
-      <Layout value="coucou" />
+      <Layout />
     </div>
   );
 }
