@@ -18,6 +18,7 @@ class App extends React.Component
 
   render()
   {
+
     return (
       <div>
         <NavBar table={this.state.currentTable} return={this.closeCalculator} />
