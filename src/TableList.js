@@ -72,7 +72,7 @@ class TableList extends React.Component
             <div className="row">
                 <FloatingButton addTable={this.addTable} tableNumber={this.state.tables.length} />
                 <Modal removeTable={() => this.removeTable()} />
-                <div className="col s12 m6">
+                <div className="col s12 m6 offset-m3">
                     {renderers}
                 </div>
             </div>
