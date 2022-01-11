@@ -11,6 +11,13 @@ class NavBar extends React.Component
 
     render()
     {
+        const arrowCSS = {
+            float: "left",
+            position: "relative",
+            zIndex: 1,
+            height: "56px",
+            margin: "0 18px",
+        }
         const navStyle = {
             backgroundColor: '#c63f1b'
         }
@@ -18,19 +25,15 @@ class NavBar extends React.Component
             <div>
                 <nav style={navStyle}>
                     <div className="nav-wrapper center">
-                        <a href="#!" className="flow-text">Outil de Commandes</a>
-                        {/*
-                        <a href="#!" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
-                        <ul className="right hide-on-med-and-down">
-                            <li><a href="about.html">A propos</a></li>
-                        </ul>
-                        */}
+                        <a href="#!" className="flow-text">{this.props.table === null ? "Liste des Tables" : "Table " + this.props.table.name}</a>
+                        {
+                            this.props.table === null ? null :
+                                <a href="#!" style={arrowCSS} onClick={this.props.return}>
+                                    <i className="material-icons">arrow_back</i>
+                                </a>
+                        }
                     </div>
                 </nav>
-                {/*<ul className="sidenav" id="mobile-demo">
-                    <li><a href="about.html">A propos</a></li>
-                </ul>*/}
-
             </div>
 
         )

@@ -8,6 +8,7 @@ class ProductList extends React.Component
     {
         super(props);
         let productList = [];
+        productList.push(new Product("Adhésion à l'asso", 5));
         productList.push(new Product("Bière Blonde 25cl", 2.5));
         productList.push(new Product("Bière Blonde 50cl", 4.5));
         productList.push(new Product("Bière Bouteille", 3.5));
@@ -48,7 +49,7 @@ class ProductList extends React.Component
         let list = [];
         for (let i = 0; i < this.state.products.length; i++)
         {
-            list.push(<ProductButton id={i} products={this.state.products} addProduct={(ctx) => addProductFunction(ctx)} />);
+            list.push(<ProductButton id={i} products={this.state.products} addProduct={addProductFunction} />);
         }
         return list;
     }
