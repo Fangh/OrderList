@@ -1,9 +1,21 @@
 import React from 'react';
 import Table from './Table';
 import FloatingButton from './FloatingButton';
+import M from 'materialize-css';
+import Modal from './Modal.js';
 
 class TableList extends React.Component
 {
+    componentDidMount()
+    {
+        let that = this;
+        document.addEventListener('DOMContentLoaded', function ()
+        {
+            let modalElem = document.getElementById("deleteTableModal");
+            let instance = M.Modal.init(modalElem);
+            that.deleteModal = instance;
+        });
+    }
     constructor(props)
     {
         super(props);
@@ -51,7 +63,7 @@ class TableList extends React.Component
                 <div key={table.name} className="card red lighten-1">
                     <div className="card-content white-text" style={flexCSS}>
                         <span className="card-title waves-effect waves-light" onClick={() => this.props.openCalculator(table)}>Table {table.name}</span>
-                        <a className='material-icons' style={iconCSS} onClick={() => this.removeTable(table)}>delete</a>
+                        <a href="#!" className='material-icons' style={iconCSS} onClick={() => this.askRemoveTable(table)}>delete</a>
                     </div>
                 </div>);
         });
@@ -59,6 +71,7 @@ class TableList extends React.Component
         return (
             <div className="row">
                 <FloatingButton addTable={this.addTable} tableNumber={this.state.tables.length} />
+                <Modal removeTable={() => this.removeTable()} />
                 <div className="col s12 m6">
                     {renderers}
                 </div>
@@ -88,8 +101,15 @@ class TableList extends React.Component
         );
     }
 
-    removeTable(table)
+    askRemoveTable(table)
     {
+        this.deleteModal.open();
+        this.tableToDelete = table;
+    }
+
+    removeTable()
+    {
+        let table = this.tableToDelete;
         let _tables = this.state.tables;
         let _currentPosibleNames = this.state.currentPossibleNames;
 
@@ -105,6 +125,7 @@ class TableList extends React.Component
             () =>
             {
                 localStorage.setItem('TableListState', JSON.stringify(this.state))
+                this.tableToDelete = null;
             }
         );
     }

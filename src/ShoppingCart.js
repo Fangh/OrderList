@@ -13,7 +13,7 @@ class ShoppingCart extends React.Component
             )
         })
 
-        let trashCan = <a className='waves-effect waves-light btn' onClick={() => this.props.removeAllProducts()}><i className='small material-icons'>delete</i></a>;
+        let trashCan = <a href="#!" className='waves-effect waves-light btn' onClick={() => this.props.removeAllProducts()}><i className='small material-icons'>delete</i></a>;
         if (this.props.content <= 0)
             trashCan = null;
 
