@@ -10,6 +10,8 @@ class FloatingButton extends React.Component
         {
             tapButton: null
         }
+
+        this.tableManager = props.tableManager;
     }
     // get a reference to the element after the component has mounted
     componentDidMount()
@@ -28,13 +30,13 @@ class FloatingButton extends React.Component
 
     render()
     {
-        if (this.state.tapButton != null && this.props.tableNumber == 0)
+        if (this.state.tapButton != null && this.tableManager.tableNumber == 0)
             this.state.tapButton.open();
 
         return (
-            <div>
+            <div id="FloatingButton">
                 <div className="fixed-action-btn" >
-                    <a id="menu" href="#!" className="waves-effect waves-light btn-large btn-floating red" onClick={() => this.props.addTable()}>
+                    <a id="menu" href="#!" className="waves-effect waves-light btn-large btn-floating red" onClick={() => this.tableManager.addTable()}>
                         <i className="large material-icons">add</i>
                     </a>
                 </div>

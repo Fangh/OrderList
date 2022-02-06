@@ -22,7 +22,7 @@ class NavBar extends React.Component
             backgroundColor: '#c63f1b'
         }
         return (
-            <div>
+            <div id="NavBar">
                 <nav style={navStyle}>
                     <div className="nav-wrapper center">
                         <a href="#!" className="flow-text" >{this.props.table === null ? "Liste des Tables" : "Table " + this.props.table.name}</a>
@@ -34,7 +34,7 @@ class NavBar extends React.Component
                         }
                     </div>
                 </nav>
-            </div >
+            </div>
 
         )
     }

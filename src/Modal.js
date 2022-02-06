@@ -12,7 +12,7 @@ class Modal extends React.Component
                 </div>
                 <div className="modal-footer">
                     <a href="#!" className="modal-close waves-effect waves-green btn-flat">Non</a>
-                    <a href="#!" onClick={() => this.props.removeTable()} className="modal-close waves-effect waves-green btn-flat">Oui</a>
+                    <a href="#!" onClick={() => this.props.tableManager.removeTable()} className="modal-close waves-effect waves-green btn-flat">Oui</a>
                 </div>
             </div>
         )

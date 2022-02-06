@@ -7,18 +7,17 @@ class Calculator extends React.Component
     constructor(props)
     {
         super(props);
-        const saveState = JSON.parse(localStorage.getItem('TableListState'));
 
         try
         {
-            if (saveState.tables.find(x => x.id === this.props.table.id) === null)
+            if (this.props.table.id === null)
             {
                 console.log("error ! table is null !");
                 return;
             }
             this.state =
             {
-                cartContent: saveState.tables.find(x => x.id === this.props.table.id).cartContent.slice(),
+                cartContent: this.props.table.cartContent.slice(),
             }
         }
         catch (error)
@@ -59,7 +58,7 @@ class Calculator extends React.Component
             },
             () =>
             {
-                this.updateTableCart()
+                this.props.table.cartContent = this.state.cartContent
             });
     }
 
@@ -90,7 +89,7 @@ class Calculator extends React.Component
             },
             () =>
             {
-                this.updateTableCart()
+                this.props.table.cartContent = this.state.cartContent
             });
     }
 
@@ -102,19 +101,8 @@ class Calculator extends React.Component
             },
             () =>
             {
-                this.updateTableCart()
+                this.props.table.cartContent = this.state.cartContent
             });
-    }
-
-    updateTableCart()
-    {
-        let saveState = JSON.parse(localStorage.getItem('TableListState'));
-
-        let tables = saveState.tables;
-        let table = tables.find(x => x.id === this.props.table.id);
-        table.cartContent = this.state.cartContent;
-        saveState.tables = tables;
-        localStorage.setItem('TableListState', JSON.stringify(saveState))
     }
 
     render()
