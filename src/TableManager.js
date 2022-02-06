@@ -35,7 +35,6 @@ class TableManager
 
     initialize()
     {
-        console.log("Initialize TableManager");
         this.tables = [];
         this.currentPossibleNames = this.possibleNames;
         this.loadState();

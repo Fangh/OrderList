@@ -22,10 +22,11 @@ class App extends React.Component
       tables: [],
       currentTable: null,
     }
-
     this.deleteModal = null;
-
     this.tableManager = new TableManager(this);
+
+    this.version = "V1.1";
+    console.log(this.version);
   }
 
   render()
