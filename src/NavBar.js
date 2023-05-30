@@ -25,7 +25,7 @@ class NavBar extends React.Component
             <div id="NavBar">
                 <nav style={navStyle}>
                     <div className="nav-wrapper center">
-                        <a href="#!" className="flow-text" >{this.props.table === null ? "Liste des Tables" : "Table " + this.props.table.name}</a>
+                        <a href="#!" className="flow-text" >{this.props.table === null ? "Liste des Tables" : this.props.table.name}</a>
                         {
                             this.props.table === null ? null :
                                 <a href="#!" style={arrowCSS} onClick={this.props.return}>

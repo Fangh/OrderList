@@ -26,9 +26,9 @@ class TableList extends React.Component
         {
             renderers.push(
                 <div key={table.name} className="card red lighten-1">
-                    <div className="card-content white-text" style={flexCSS}>
-                        <span className="card-title waves-effect waves-light" onClick={() => this.props.openCalculator(table)}>Table {table.name}</span>
-                        <a href="#!" className='material-icons' style={iconCSS} onClick={() => this.props.askRemoveTable(table)}>delete</a>
+                    <div className="card-content white-text waves-effect waves-light" style={flexCSS} onClick={() => this.props.openCalculator(table)}>
+                        <span className="card-title ">{table.name}</span>
+                        <a href="#!" className='material-icons' style={iconCSS} onClick={(e) => { e.stopPropagation(); this.props.askRemoveTable(table); }}>delete</a>
                     </div>
                 </div>);
         });

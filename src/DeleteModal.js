@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Modal extends React.Component
+class DeleteModal extends React.Component
 {
     render()
     {
@@ -19,4 +19,4 @@ class Modal extends React.Component
     }
 }
 
-export default Modal;
+export default DeleteModal;
