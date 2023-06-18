@@ -34,7 +34,7 @@ class TableManager
 
     addTable(tableName)
     {
-        if (tableName == "")
+        if (tableName === "")
             tableName = "Table sans nom";
 
         document.getElementById("tableName").value = "";

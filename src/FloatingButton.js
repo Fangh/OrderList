@@ -1,6 +1,5 @@
 import React from 'react';
 import M from 'materialize-css';
-import NameModal from './NameModal';
 
 class FloatingButton extends React.Component
 {
@@ -31,7 +30,7 @@ class FloatingButton extends React.Component
 
     render()
     {
-        if (this.state.tapButton != null && this.tableManager.tables.length == 0)
+        if (this.state.tapButton != null && this.tableManager.tables.length === 0)
             this.state.tapButton.open();
 
         return (

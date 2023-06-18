@@ -79,7 +79,7 @@ class Calculator extends React.Component
             {
                 element.number--;
             }
-            if (element.number == 0) //should be == and not ===
+            if (element.number === 0)
                 object.splice(index, 1);
         });
 
