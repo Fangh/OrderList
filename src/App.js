@@ -28,7 +28,7 @@ class App extends React.Component
     this.nameModal = null;
     this.tableManager = new TableManager(this);
 
-    this.version = "V1.3";
+    this.version = "V1.4";
     console.log(this.version);
   }
 
