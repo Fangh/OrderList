@@ -1,0 +1,31 @@
+.product-button-container {
+    width: 24%;
+    float:left;
+    background-color: #c63f1b;
+    text-align: center;
+    padding: 1%;
+    margin-top: 1%;
+    margin-left: 1%;
+    height: 100px;
+    display: flex;
+    justify-content: center; /* Align horizontal */
+    align-items: center; /* Align vertical */
+}
+
+.product-button {
+    font-size: 1.1em;
+    line-height: 25px;
+    color: white;
+}
+
+.nav-bar{
+    background-color: #c63f1b;
+}
+
+.back-arrow{
+    float: left;
+    position: relative;
+    z-Index: 1;
+    height: 56px;
+    margin: 0 18px;
+}

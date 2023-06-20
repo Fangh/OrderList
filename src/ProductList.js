@@ -42,8 +42,10 @@ class ProductList extends React.Component
     render()
     {
         return (
-            <div className="collection">
-                {this.generateList(this.props.addProduct)}
+            <div className="container">
+                <div className="row">
+                    {this.generateList(this.props.addProduct)}
+                </div>
             </div>
         )
     }
@@ -54,7 +56,7 @@ class ProductList extends React.Component
         let list = [];
         for (let i = 0; i < this.state.products.length; i++)
         {
-            list.push(<ProductButton id={i} products={this.state.products} addProduct={addProductFunction} />);
+            list.push(<ProductButton id={i} products={this.state.products} addProduct={addProductFunction} key={i} />);
         }
         return list;
     }

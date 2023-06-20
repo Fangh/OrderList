@@ -109,19 +109,13 @@ class Calculator extends React.Component
     {
         return (
             <div className="container">
-                <div className="row">
-                    <div className="col s6 center">
-                        <p className="flow-text"><i className='small material-icons'>local_bar</i> Produits</p>
-                        <ProductList addProduct={this.addProduct} />
-                    </div>
-                    <div className="col s6 center">
-                        <p className="flow-text"><i className='small material-icons'>shopping_cart</i> Commande</p>
-                        <ShoppingCart
-                            content={this.state.cartContent}
-                            removeProduct={this.removeProduct}
-                            removeAllProducts={this.removeAllProducts}
-                        />
-                    </div>
+                <div className="col s6 center">
+                    <p className="flow-text"><i className='small material-icons'>shopping_cart</i> Commande</p>
+                    <ShoppingCart
+                        content={this.state.cartContent}
+                        removeProduct={this.removeProduct}
+                        removeAllProducts={this.removeAllProducts}
+                    />
                 </div>
             </div>
         )

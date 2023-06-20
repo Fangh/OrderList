@@ -7,6 +7,8 @@ import DeleteModal from './DeleteModal.js';
 import TableManager from './TableManager.js';
 import M from 'materialize-css';
 import NameModal from './NameModal.js';
+import ProductList from './ProductList.js';
+import CashRegister from './CashRegister.js';
 
 class App extends React.Component
 {
@@ -40,10 +42,12 @@ class App extends React.Component
       return (
         <div id="App.js">
           <NavBar table={this.state.currentTable} return={this.closeCalculator} />
-          <TableList tables={this.state.tables} openCalculator={this.openCalculator} askRemoveTable={this.askRemoveTable} />
-          <FloatingButton tableManager={this.tableManager} openNameModal={this.askNameTable} />
+          <CashRegister />
+          <ProductList />
+          {/*<TableList tables={this.state.tables} openCalculator={this.openCalculator} askRemoveTable={this.askRemoveTable} />
+            <FloatingButton tableManager={this.tableManager} openNameModal={this.askNameTable} />
           <DeleteModal tableManager={this.tableManager} />
-          <NameModal tableManager={this.tableManager} />
+          <NameModal tableManager={this.tableManager} />*/}
         </div>
       );
     }
