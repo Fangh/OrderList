@@ -9,6 +9,7 @@ import M from 'materialize-css';
 import NameModal from './NameModal.js';
 import ProductList from './ProductList.js';
 import CashRegister from './CashRegister.js';
+import Order from './Order.js';
 
 class App extends React.Component
 {
@@ -44,6 +45,7 @@ class App extends React.Component
           <NavBar table={this.state.currentTable} return={this.closeCalculator} />
           <CashRegister />
           <ProductList />
+          <Order/>
           {/*<TableList tables={this.state.tables} openCalculator={this.openCalculator} askRemoveTable={this.askRemoveTable} />
             <FloatingButton tableManager={this.tableManager} openNameModal={this.askNameTable} />
           <DeleteModal tableManager={this.tableManager} />
