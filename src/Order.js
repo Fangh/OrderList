@@ -1,4 +1,5 @@
 import React from 'react';
+import './css/custom.css';
 
 var CurrentOrder = 
 {
@@ -92,17 +93,29 @@ class Order extends React.Component
     render()
     {
         return (
-            <div className="center-align flow-text">
-                <p>
-                    {this.state.displayedProduct === null 
-                    ? "Choisissez un produit" 
-                    : ""+this.state.displayedProduct.name+" : "+this.state.displayedProduct.price + "€"}
-                </p>
-                    {
-                    this.state.displayedProduct === null 
-                    ? <div></div>
-                    : <div><button onClick={() => this.validateOrder()}>Confirm</button><button onClick={() => this.cancelOrder()}>Cancel</button></div>
-                    }
+            <div className="row">
+            <div className="col s12 m6">
+                <div className="card">
+                <div className="card-content">
+                    <span className="card-title">
+                        {this.state.displayedProduct === null 
+                        ? "Choisissez un produit" 
+                        : ""+this.state.displayedProduct.name+" : "+this.state.displayedProduct.price + "€"}
+                    </span>
+                    <div className="card-action order-card-action">{
+                        this.state.displayedProduct === null 
+                        ? ""
+                        : 
+                        <div>
+                            <a href="#!" className='order-button' type="submit" name="validate" onClick={() => this.validateOrder()}>Payer tout de suite</a>
+                            <a href="#!" className='order-button'  onClick={() => this.validateOrder()}>Payer plus tard</a>
+                            <a href="#!" className='order-button'  onClick={() => this.cancelOrder()}>Annuler</a>
+                        </div>
+                        }
+                    </div>
+                </div>
+                </div>
+            </div>
             </div>
         )
     }

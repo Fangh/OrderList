@@ -29,3 +29,12 @@
     height: 56px;
     margin: 0 18px;
 }
+
+.order-button{
+    font-size: xx-small;
+}
+
+.order-card-action
+{
+    padding: 10px 0px 0px 0px !important;
+}

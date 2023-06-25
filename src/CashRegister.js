@@ -27,7 +27,6 @@ class CashRegister extends React.Component
         let clone = this.state.soldProducts.slice(); //creates the clone of the state
         clone.push(product); //add the product
         this.setState({soldProducts: clone}); //update state
-        console.log(this.state.soldProducts);
     };
 
     //calculate the income generated during the day. return a int value
