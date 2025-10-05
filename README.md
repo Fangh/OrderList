@@ -9,8 +9,6 @@
 Si vous voulez ajouter ou retirer un produit ou changer son prix, aller dans le fichier `ProductList.js` et vous trouverez tous les produits, par ligne.
 A vous de changer ou d'ajouter ou supprimer des lignes.
 
-
-
 # Pour tester l'app
 
 1. Une fois, il faut mettre à jour npm. Pour ça : Ouvrez le Terminal et tapez `npm update`.
@@ -37,6 +35,10 @@ A vous de changer ou d'ajouter ou supprimer des lignes.
 7. A chaque fois que vous voulez déployer cette build sur le site web, tapez `firebase deploy --only hosting`
 8. Si ça marche vous devriez voir écris "Deploy complete!"
 9. Pour vérifiez, aller sur le site https://zinc-de-trefle.web.app/
+
+# A savoir
+
+- Dans le fichier App.js (autour de la ligne 31) y'a un numéro de version que j'aime bien augmenté à chaque nouvelle version de l'application. Cette version est affiché dans la console quand on fait F12 sur son navigateur lorsqu'on est sur le site web. ça permet d'être certain.e qu'on a bien déployé la dernière version quand on test sur son navigateur.
 
 
 ---
